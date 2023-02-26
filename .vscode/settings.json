@@ -1,25 +1,29 @@
 {
-  // JS
+  "files.exclude": {
+    "amplify/.config": true,
+    "amplify/**/*-parameters.json": true,
+    "amplify/**/amplify.state": true,
+    "amplify/**/transform.conf.json": true,
+    "amplify/#current-cloud-backend": true,
+    "amplify/backend/amplify-meta.json": true,
+    "amplify/backend/awscloudformation": true
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
-  // JSON
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  // Extension: Git
   "git.rebaseWhenSync": true,
   "git.autofetch": true,
   "git.enableSmartCommit": true,
-  // Extension: Prettier
   "prettier.requireConfig": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  // Extension: ESLint
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.organizeImports": false,
+    "source.organizeImports": false
   },
   "eslint.validate": [
     "javascript",
@@ -28,10 +32,8 @@
     "typescriptreact"
   ],
   "eslint.format.enable": true,
-  // Package manager Configs
   "eslint.packageManager": "yarn",
   "npm.packageManager": "yarn",
-  // Extension: cSpell
   "cSpell.words": [
     "Customizer"
   ],
