@@ -43,7 +43,6 @@ const AuthProvider = ({ children }: Props) => {
       const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
       if (storedToken) {
         setLoading(true)
-        console.log('aaaa', storedToken)
         await axios
           .get(authConfig.meEndpoint, {
             headers: {
