@@ -8,16 +8,17 @@ import CardContent from '@mui/material/CardContent'
 import React, { useState, useEffect } from 'react'
 import { API } from 'aws-amplify'
 
-import { useAuth } from 'src/hooks/useAuth'
+// import { useAuth } from 'src/hooks/useAuth'
 import { listNotes } from '../../graphql/queries'
-import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from '../../graphql/mutations'
+import { createNote as createNoteMutation } from '../../graphql/mutations'
 
-import { Button, Flex, Heading, Text, TextField, View, withAuthenticator } from '@aws-amplify/ui-react'
+import { Button, Flex, Heading, TextField, View } from '@aws-amplify/ui-react'
 
 const Home = () => {
   // Hooks
   // const auth = useAuth()
   const [notes, setNotes] = useState([])
+  console.log(notes)
 
   useEffect(() => {
     fetchNotes()
