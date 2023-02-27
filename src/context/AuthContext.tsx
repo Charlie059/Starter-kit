@@ -41,28 +41,42 @@ const AuthProvider = ({ children }: Props) => {
   useEffect(() => {
     const initAuth = async (): Promise<void> => {
       const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
+
       if (storedToken) {
-        setLoading(true)
-        await axios
-          .get(authConfig.meEndpoint, {
-            headers: {
-              Authorization: storedToken
-            }
-          })
-          .then(async response => {
-            setLoading(false)
-            setUser({ ...response.data.userData })
-          })
-          .catch(() => {
-            localStorage.removeItem('userData')
-            localStorage.removeItem('refreshToken')
-            localStorage.removeItem('accessToken')
-            setUser(null)
-            setLoading(false)
-            if (authConfig.onTokenExpiration === 'logout' && !router.pathname.includes('login')) {
-              router.replace('/login')
-            }
-          })
+        setLoading(false)
+
+        const _userData: UserDataType = {
+          id: 111,
+          role: 'admin',
+          email: 'xg73@duke.edu',
+          fullName: '',
+          username: 'xg73@duke.edu',
+          password: 'Testing1234'
+        }
+
+        setUser({ ..._userData })
+        console.log(_userData)
+
+        // await axios
+        //   .get(authConfig.meEndpoint, {
+        //     headers: {
+        //       Authorization: storedToken
+        //     }
+        //   })
+        //   .then(async response => {
+        //     setLoading(false)
+        //     setUser({ ...response.data.userData })
+        //   })
+        //   .catch(() => {
+        //     localStorage.removeItem('userData')
+        //     localStorage.removeItem('refreshToken')
+        //     localStorage.removeItem('accessToken')
+        //     setUser(null)
+        //     setLoading(false)
+        //     if (authConfig.onTokenExpiration === 'logout' && !router.pathname.includes('login')) {
+        //       router.replace('/login')
+        //     }
+        //   })
       } else {
         setLoading(false)
       }
@@ -80,7 +94,6 @@ const AuthProvider = ({ children }: Props) => {
           ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
           : null
         const returnUrl = router.query.returnUrl
-
         setUser({ ...response.data.userData })
         params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
 
@@ -91,6 +104,7 @@ const AuthProvider = ({ children }: Props) => {
 
       .catch(err => {
         if (errorCallback) errorCallback(err)
+        console.log('Error')
       })
   }
 

@@ -5,7 +5,12 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
+import { useAuth } from 'src/hooks/useAuth'
+
 const Home = () => {
+  // Hooks
+  const auth = useAuth()
+
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
@@ -25,7 +30,8 @@ const Home = () => {
           <CardHeader title='ACL and JWT 🔒'></CardHeader>
           <CardContent>
             <Typography sx={{ mb: 2 }}>
-              Access Control (ACL) and Authentication (JWT) are the two main security features of our template and are implemented in the starter-kit as well.
+              Access Control (ACL) and Authentication (JWT) are the two main security features of our template and are
+              implemented in the starter-kit as well.
             </Typography>
             <Typography>Please read our Authentication and ACL Documentations to get more out of them.</Typography>
           </CardContent>
