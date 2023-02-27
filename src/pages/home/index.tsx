@@ -5,11 +5,11 @@ import Typography from '@mui/material/Typography'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 
-import { useAuth } from 'src/hooks/useAuth'
+// import { useAuth } from 'src/hooks/useAuth'
 
 const Home = () => {
   // Hooks
-  const auth = useAuth()
+  // const auth = useAuth()
 
   return (
     <Grid container spacing={6}>

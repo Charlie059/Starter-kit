@@ -5,11 +5,10 @@ import jwt from 'jsonwebtoken'
 import mock from 'src/@fake-db/mock'
 
 // ** Types
-import { LoginParams, UserDataType } from 'src/context/types'
+import { UserDataType } from 'src/context/types'
 
 // AWS Amplify Auth
-import Auth, { CognitoUser } from '@aws-amplify/auth'
-import { string } from 'yup/lib/locale'
+import Auth from '@aws-amplify/auth'
 
 const users: UserDataType[] = [
   {
