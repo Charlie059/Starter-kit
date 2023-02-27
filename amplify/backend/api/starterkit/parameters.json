@@ -1,5 +1,6 @@
 {
   "AppSyncApiName": "starterkit",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-02-27T05:47:32.486Z"
 }
