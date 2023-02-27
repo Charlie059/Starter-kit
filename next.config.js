@@ -27,3 +27,11 @@ module.exports = withTM({
     return config
   }
 })
+
+module.exports = {
+  experimental: {
+    output: {
+      standalone: true
+    }
+  }
+}
