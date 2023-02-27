@@ -29,9 +29,5 @@ module.exports = withTM({
 })
 
 module.exports = {
-  experimental: {
-    output: {
-      standalone: true
-    }
-  }
+  output: 'standalone'
 }
