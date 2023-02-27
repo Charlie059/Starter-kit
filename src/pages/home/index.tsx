@@ -30,6 +30,7 @@ const Home = () => {
     setNotes(notesFromAPI)
   }
 
+  //GraphQL
   async function createNote(event: Event) {
     event.preventDefault()
     const form = event.target as HTMLFormElement
