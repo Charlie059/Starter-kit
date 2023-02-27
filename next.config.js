@@ -13,6 +13,7 @@ const withTM = require('next-transpile-modules')([
 ])
 
 module.exports = withTM({
+  output: 'standalone',
   trailingSlash: true,
   reactStrictMode: false,
   experimental: {
@@ -27,7 +28,3 @@ module.exports = withTM({
     return config
   }
 })
-
-module.exports = {
-  output: 'standalone'
-}
